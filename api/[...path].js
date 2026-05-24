@@ -114,11 +114,11 @@ module.exports = async (req, res) => {
   res.setHeader('X-Frame-Options', 'DENY');
   res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
 
-  const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
-  const pathname = url.pathname;
   const method = req.method;
+  // Vercel catch-all: req.query.path is an array of path segments
+  const segments = req.query.path || [];
 
-  // CORS（可选）
+  // CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -128,20 +128,20 @@ module.exports = async (req, res) => {
   }
 
   // GET /api/cases
-  if (pathname === '/api/cases' && method === 'GET') {
+  if (segments.length === 1 && segments[0] === 'cases' && method === 'GET') {
     return res.status(200).json(DEMO_CASES);
   }
 
   // GET /api/cases/:id
-  if (pathname.startsWith('/api/cases/') && method === 'GET') {
-    const id = pathname.split('/api/cases/')[1];
+  if (segments.length === 2 && segments[0] === 'cases' && method === 'GET') {
+    const id = segments[1];
     const c = DEMO_CASES.find(x => x.id === id);
     if (c) return res.status(200).json(c);
     return res.status(404).json({ error: '案例未找到' });
   }
 
   // POST /api/analyze
-  if (pathname === '/api/analyze' && method === 'POST') {
+  if (segments.length === 1 && segments[0] === 'analyze' && method === 'POST') {
     try {
       const { screenshotsCount, description } = req.body || {};
       const result = mockAnalysis(screenshotsCount || 1, esc(description || ''));
