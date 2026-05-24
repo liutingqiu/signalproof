@@ -60,20 +60,20 @@ function getDemoCases() {
   return [
     {
       id: 'case-demo',
-      title: '【新提交】天梯超凡段位疑似透视举报',
+      title: '【新提交】KOL @CryptoWhale 声称 90% BTC 胜率验证',
       reporter: '你',
-      map: '亚海悬城 (Ascent)',
+      map: 'Binance 币安',
       timestamp: new Date().toISOString(),
       status: 'voting',
       screenshots: 3,
       aiConfidence: 72,
-      aiSummary: 'AI 检测到 3 处可疑行为：隔墙预瞄频率异常（2次/分钟）、反应时间低于人类阈值（平均 48ms）、搜点路径与常规差异显著。建议社区复审。',
+      aiSummary: 'AI 对比链上数据后发现：该 KOL 近 30 天 45 条信号中，实际盈利仅 19 条（42%），与声称的 90% 严重不符。典型幸存者偏差——只晒盈利单。建议社区复审。',
       analysisEvents: [
-        { time: '03:22', type: 'suspicious', desc: 'A 小通道隔墙预瞄敌方位置，准星持续跟踪墙体后目标移动轨迹，持续 2.4 秒' },
-        { time: '05:47', type: 'suspicious', desc: 'B 点烟幕内连续击杀 3 人，无视野情况下反应时间仅 52ms，远超人类极限（~200ms）' },
-        { time: '07:15', type: 'normal', desc: '中路正常搜点，路径符合常规战术习惯' },
-        { time: '09:33', type: 'suspicious', desc: '防守方回防路径异常，绕开已知有人区域，疑似提前获取敌方分布信息' },
-        { time: '11:50', type: 'normal', desc: '残局 1v2 正常处理，无异常行为标记' },
+        { time: '信号 #12', type: 'suspicious', desc: 'BTC 做多信号发出后 4 小时暴跌 3.2%，但 KOL 后续未提及此单' },
+        { time: '信号 #23', type: 'suspicious', desc: '止盈设置在极端点位（距离市价 8%），实际从未触及，统计时却被计为"盈利"' },
+        { time: '信号 #31', type: 'normal', desc: 'ETH 做空信号准确，入场和止盈点位合理' },
+        { time: '信号 #38', type: 'suspicious', desc: '信号发出时间与实际链上交易时间不匹配——KOL 可能是跟单而非预测' },
+        { time: '信号 #44', type: 'normal', desc: 'BNB 波段信号准确，但此类简单信号仅占总数 11%' },
       ],
       voteCheat: 0,
       voteClean: 0,
@@ -82,20 +82,20 @@ function getDemoCases() {
     },
     {
       id: 'case-001',
-      title: '天梯超凡段位疑似透视举报',
-      reporter: '玩家@SharpEye',
-      map: '亚海悬城 (Ascent)',
+      title: 'KOL @CryptoWhale 声称 90% BTC 胜率 — 实际仅 42%',
+      reporter: '链上侦探@OnchainEye',
+      map: 'Binance 币安',
       timestamp: '2026-06-01T14:30:00Z',
       status: 'voting',
       screenshots: 3,
       aiConfidence: 72,
-      aiSummary: 'AI 检测到 3 处可疑行为：隔墙预瞄频率异常（2次/分钟）、反应时间低于人类阈值（平均 48ms）、搜点路径与常规差异显著。建议社区复审。',
+      aiSummary: 'AI 对比链上数据后发现：该 KOL 近 30 天 45 条信号中，实际盈利仅 19 条（42%），与声称的 90% 严重不符。典型幸存者偏差——只晒盈利单。建议社区复审。',
       analysisEvents: [
-        { time: '03:22', type: 'suspicious', desc: 'A 小通道隔墙预瞄敌方位置，准星持续跟踪墙体后目标移动轨迹，持续 2.4 秒' },
-        { time: '05:47', type: 'suspicious', desc: 'B 点烟幕内连续击杀 3 人，无视野情况下反应时间仅 52ms，远超人类极限（~200ms）' },
-        { time: '07:15', type: 'normal', desc: '中路正常搜点，路径符合常规战术习惯' },
-        { time: '09:33', type: 'suspicious', desc: '防守方回防路径异常，绕开已知有人区域，疑似提前获取敌方分布信息' },
-        { time: '11:50', type: 'normal', desc: '残局 1v2 正常处理，无异常行为标记' },
+        { time: '信号 #12', type: 'suspicious', desc: 'BTC 做多信号发出后 4 小时暴跌 3.2%，但 KOL 后续未提及此单' },
+        { time: '信号 #23', type: 'suspicious', desc: '止盈设置在极端点位（距离市价 8%），实际从未触及，统计时却被计为"盈利"' },
+        { time: '信号 #31', type: 'normal', desc: 'ETH 做空信号准确，入场和止盈点位合理' },
+        { time: '信号 #38', type: 'suspicious', desc: '信号发出时间与实际链上交易时间不匹配——KOL 可能是跟单而非预测' },
+        { time: '信号 #44', type: 'normal', desc: 'BNB 波段信号准确，但此类简单信号仅占总数 11%' },
       ],
       voteCheat: 64,
       voteClean: 22,
@@ -104,18 +104,18 @@ function getDemoCases() {
     },
     {
       id: 'case-002',
-      title: '钻石局怀疑 aimbot 锁头举报',
-      reporter: '玩家@NightOwl',
-      map: '源工重镇 (Bind)',
+      title: 'AI 交易机器人 @AlphaBot 实盘验证 — 准确率 78% 达标',
+      reporter: '量化研究员@QuantLeo',
+      map: 'OKX',
       timestamp: '2026-06-02T09:15:00Z',
       status: 'resolved',
       screenshots: 2,
       aiConfidence: 15,
-      aiSummary: 'AI 检测未发现明显异常。准星移动轨迹与人类操作特征吻合，爆头率虽高（38%）但击杀节奏、搜点习惯与高分段玩家一致。建议标记为正常。',
+      aiSummary: 'AI 验证 @AlphaBot 近 60 天链上交易记录：83 笔交易中 65 笔盈利，实际胜率 78.3%，与声称的 80% 基本一致。盈亏比 2.1:1，最大回撤 12%。建议标记为可信。',
       analysisEvents: [
-        { time: '02:10', type: 'normal', desc: 'A 点防守定位正常，准星摆动幅度附合人类操作特征' },
-        { time: '06:30', type: 'normal', desc: 'B 点瞬爆头击杀，但击杀帧前后准星微调轨迹自然，非机械锁定' },
-        { time: '08:55', type: 'normal', desc: '残局处理冷静，搜点节奏与经验老手一致' },
+        { time: '第 1-20 笔', type: 'normal', desc: 'ETH/BTC 趋势跟随策略运行正常，胜率 75%，符合策略预期' },
+        { time: '第 35-42 笔', type: 'normal', desc: '市场剧烈波动期间最大回撤仅 8%，风控参数设置合理' },
+        { time: '第 65-83 笔', type: 'normal', desc: '近期交易频率降低但质量提升，胜率上升至 82%' },
       ],
       voteCheat: 8,
       voteClean: 85,
@@ -124,19 +124,19 @@ function getDemoCases() {
     },
     {
       id: 'case-003',
-      title: 'VCT 次级联赛可疑回放分析',
-      reporter: '社区分析师@TacticalEye',
-      map: '隐世修所 (Haven)',
+      title: 'Twitter KOL @GemHunter 山寨币喊单分析 — 疑似拉高出货',
+      reporter: '社区成员@DefiSleuth',
+      map: 'Hyperliquid',
       timestamp: '2026-06-03T18:45:00Z',
       status: 'voting',
       screenshots: 4,
       aiConfidence: 58,
-      aiSummary: 'AI 在分析 4 张截图后发现 1 处高度可疑 + 2 处疑似行为。关键帧显示选手在无信息情况下做出精准判断。建议社区深入讨论。',
+      aiSummary: 'AI 分析该 KOL 近 3 个月喊单记录：16 次喊单中 10 次在 24 小时内暴跌超 30%。链上数据显示其关联钱包在喊单前 2 小时内建仓、喊单后 6 小时内出货的模式。建议社区深入讨论。',
       analysisEvents: [
-        { time: '01:45', type: 'normal', desc: '开局常规布防走位正常' },
-        { time: '04:22', type: 'suspicious', desc: 'C 点单摸路线刻意避开敌方所有常规站位，巧合概率低于 5%' },
-        { time: '07:08', type: 'suspicious', desc: 'C 点长道连杀 2 人，准星转移速度超常，但未达到明显锁头阈值' },
-        { time: '10:12', type: 'normal', desc: '下半场手枪局正常处理' },
+        { time: '喊单 #3', type: 'normal', desc: '中等市值代币，喊单后价格温和上涨，无异常' },
+        { time: '喊单 #7', type: 'suspicious', desc: '小市值代币（MCap < $1M），喊单后 1h 涨 400%+，随后 24h 跌 85%，典型 pump & dump' },
+        { time: '喊单 #11', type: 'suspicious', desc: '关联钱包 0x3f2a 在喊单前 1.5h 买入 $25K，6h 后卖出 $78K，时间高度吻合' },
+        { time: '喊单 #15', type: 'normal', desc: 'BTC 相关分析无明显异常' },
       ],
       voteCheat: 41,
       voteClean: 35,
@@ -150,7 +150,7 @@ function getDemoCases() {
 
 function mockAnalysis(screenshotsCount, description) {
   // 简单规则模拟 AI 分析
-  const keywords = ['锁头', 'aimbot', '隔墙', '透视', '透', '挂', '自动瞄准', '锁', '穿烟', '穿墙', '瞬移'];
+  const keywords = ['胜率', '拉高出货', 'pump', 'dump', '喊单', '虚假', '亏损', '爆仓', '幸存者偏差', '拉盘', '出货', '跟单'];
   const suspiciousCount = keywords.filter(kw => description.includes(kw)).length;
 
   const confidence = Math.min(95, Math.max(5, suspiciousCount * 20 + Math.floor(Math.random() * 20)));
@@ -158,51 +158,51 @@ function mockAnalysis(screenshotsCount, description) {
 
   if (confidence > 60) {
     events.push({
-      time: '03:22',
+      time: '信号 #8',
       type: 'suspicious',
-      desc: '准星移动轨迹出现非人类加速度特征，疑似辅助瞄准介入',
+      desc: '链上数据显示该信号发出后价格反向波动 3%+，但此单未被计入 KOL 的"战绩展示"',
     });
     events.push({
-      time: '06:15',
+      time: '信号 #15',
       type: 'suspicious',
-      desc: '无视野预判敌方位置，预瞄点精确锁定墙体后目标',
+      desc: '止盈止损设置明显不合理，疑似刻意美化统计结果',
     });
     events.push({
-      time: '08:40',
+      time: '信号 #22',
       type: 'normal',
-      desc: '此段时间操作正常，无异常标记',
+      desc: '该信号准确，入场和出场点位在链上可验证',
     });
   } else if (confidence > 30) {
     events.push({
-      time: '04:10',
+      time: '信号 #5',
       type: 'suspicious',
-      desc: '偶发异常准星行为，但样本不足无法确认',
+      desc: '信号发出时间与链上交易存在时间差——KOL 可能先建仓再喊单',
     });
     events.push({
-      time: '07:55',
+      time: '信号 #18',
       type: 'normal',
-      desc: '大部分时间操作与常规玩家一致',
+      desc: '大部分信号与常规交易逻辑一致，但少数存在疑点',
     });
   } else {
     events.push({
-      time: '02:30',
+      time: '信号 #1-45',
       type: 'normal',
-      desc: '全局操作未见异常，准星轨迹和反应时间均在正常范围内',
+      desc: '信号发出时间与链上记录吻合，胜率和盈亏比与声称一致',
     });
     events.push({
-      time: '05:45',
+      time: '链上总览',
       type: 'normal',
-      desc: '走位、搜点、预瞄习惯与同分段玩家吻合',
+      desc: '关联钱包交易记录透明，无 hidden position 或 wash trading 迹象',
     });
   }
 
   return {
     confidence,
     summary: confidence > 60
-      ? `AI 检测到 ${events.filter(e => e.type === 'suspicious').length} 处可疑行为，综合置信度 ${confidence}%。建议社区复审。`
+      ? `AI 发现 ${events.filter(e => e.type === 'suspicious').length} 处信号不实标记，综合置信度 ${confidence}%。建议社区复审。`
       : confidence > 30
-        ? `AI 发现少量可疑标记，综合置信度 ${confidence}%。行为在灰色地带，需人工判断。`
-        : `AI 未检测到明显异常，综合置信度 ${confidence}%。操作模式与正常玩家一致。`,
+        ? `AI 发现少量疑点，综合置信度 ${confidence}%。信号质量存疑，需人工判断。`
+        : `AI 验证通过，综合置信度 ${confidence}%。信号与链上记录吻合，建议标记为可信。`,
     events,
   };
 }
@@ -289,5 +289,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`🔍 Sentinel Watch 开发服务器已启动 → http://localhost:${PORT}`);
+  console.log(`🔍 SignalProof 开发服务器已启动 → http://localhost:${PORT}`);
 });

@@ -367,13 +367,13 @@
       $('#voteButtons').style.display = 'none';
       $('#voteMessage').style.display = '';
       if (c.voteCheat >= c.voteClean && c.voteCheat >= c.voteUncertain) {
-        $('#voteMessage').textContent = '✓ 社区判定：作弊';
+        $('#voteMessage').textContent = '✓ 社区判定：不可信';
         $('#voteMessage').style.color = 'var(--color-danger)';
       } else if (c.voteClean >= c.voteCheat && c.voteClean >= c.voteUncertain) {
-        $('#voteMessage').textContent = '✓ 社区判定：清白';
+        $('#voteMessage').textContent = '✓ 社区判定：可信';
         $('#voteMessage').style.color = 'var(--color-success)';
       } else {
-        $('#voteMessage').textContent = '✓ 社区判定：不确定';
+        $('#voteMessage').textContent = '✓ 社区判定：存疑';
         $('#voteMessage').style.color = 'var(--color-warning)';
       }
     }

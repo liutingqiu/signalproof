@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>案例详情 — Sentinel Watch | AI × 链上反作弊</title>
-  <meta name="description" content="查看 AI 分析报告、社区投票结果、链上存证记录。参与投票，让每一次裁决都透明。">
-  <meta property="og:title" content="案例详情 — Sentinel Watch">
-  <meta property="og:description" content="AI 分析报告 + 社区投票 + 链上存证。反作弊透明化。">
+  <title>信号详情 — SignalProof | AI 交易信号透明层</title>
+  <meta name="description" content="查看 AI 验证报告、社区投票结果、链上存证记录。参与投票，让每一个信号都透明可查。">
+  <meta property="og:title" content="信号详情 — SignalProof">
+  <meta property="og:description" content="AI 验证报告 + 社区投票 + 链上存证。信号透明化。">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,18 +21,18 @@
 
 <nav class="nav" role="navigation" aria-label="主导航">
   <div class="nav-inner">
-    <a href="/" class="nav-logo" aria-label="Sentinel Watch 首页">
-      <span class="logo-icon" aria-hidden="true">&#9878;</span>
-      Sentinel Watch
+    <a href="/" class="nav-logo" aria-label="SignalProof 首页">
+      <span class="logo-icon" aria-hidden="true">&#9883;</span>
+      SignalProof
     </a>
     <button class="nav-toggle" aria-label="切换菜单" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
     <div class="nav-links" role="menubar">
       <a href="/" role="menuitem">首页</a>
-      <a href="/report" role="menuitem">提交举报</a>
-      <a href="/case?id=case-001" class="active" role="menuitem">案例库</a>
-      <a href="/report" class="btn-outline" role="menuitem">提交新案例</a>
+      <a href="/report" role="menuitem">提交验证</a>
+      <a href="/case?id=case-001" class="active" role="menuitem">信号库</a>
+      <a href="/report" class="btn-outline" role="menuitem">提交新信号</a>
     </div>
   </div>
 </nav>
@@ -117,14 +117,14 @@
 
           <div id="voteButtons">
             <div class="vote-buttons">
-              <button class="vote-btn" data-choice="1" aria-label="投票：作弊">
-                &#128128; 作弊
+              <button class="vote-btn" data-choice="1" aria-label="投票：不可信">
+                &#128128; 不可信
               </button>
-              <button class="vote-btn" data-choice="2" aria-label="投票：清白">
-                &#9989; 清白
+              <button class="vote-btn" data-choice="2" aria-label="投票：可信">
+                &#9989; 可信
               </button>
-              <button class="vote-btn" data-choice="3" aria-label="投票：不确定">
-                &#8265; 不确定
+              <button class="vote-btn" data-choice="3" aria-label="投票：存疑">
+                &#8265; 存疑
               </button>
             </div>
             <button class="btn btn-primary btn-sm" id="btnCastVote" style="width:100%;" disabled>确认投票</button>
@@ -136,19 +136,19 @@
           <div style="margin-top:20px;">
             <div class="vote-result">
               <div class="vote-bar-wrap">
-                <div class="vote-bar-label"><span>作弊</span><span id="countCheat">0</span></div>
+                <div class="vote-bar-label"><span>不可信</span><span id="countCheat">0</span></div>
                 <div class="vote-bar"><div class="vote-bar-fill cheat" id="barCheat" style="width:0%;"></div></div>
               </div>
             </div>
             <div class="vote-result" style="margin-top:12px;">
               <div class="vote-bar-wrap">
-                <div class="vote-bar-label"><span>清白</span><span id="countClean">0</span></div>
+                <div class="vote-bar-label"><span>可信</span><span id="countClean">0</span></div>
                 <div class="vote-bar"><div class="vote-bar-fill clean" id="barClean" style="width:0%;"></div></div>
               </div>
             </div>
             <div class="vote-result" style="margin-top:12px;">
               <div class="vote-bar-wrap">
-                <div class="vote-bar-label"><span>不确定</span><span id="countUncertain">0</span></div>
+                <div class="vote-bar-label"><span>存疑</span><span id="countUncertain">0</span></div>
                 <div class="vote-bar"><div class="vote-bar-fill uncertain" id="barUncertain" style="width:0%;"></div></div>
               </div>
             </div>
@@ -159,7 +159,7 @@
             <p style="font-size:0.78rem;color:var(--color-text-muted);margin-bottom:8px;">&#9935; 链上存证</p>
             <p style="font-family:var(--font-mono);font-size:0.78rem;color:var(--color-primary);word-break:break-all;" id="txHash">—</p>
             <a href="#" id="explorerLink" target="_blank" rel="noopener" style="font-size:0.78rem;display:none;">
-              在 Mantle Explorer 查看 →
+              在 Injective Explorer 查看 →
             </a>
           </div>
         </div>
@@ -168,7 +168,7 @@
 
     <!-- 案例列表切换 -->
     <div style="margin-top:48px;">
-      <h3 style="font-family:var(--font-heading);margin-bottom:16px;">其他案例</h3>
+      <h3 style="font-family:var(--font-heading);margin-bottom:16px;">其他信号</h3>
       <div class="case-list" id="otherCases">
         <!-- JS 动态渲染 -->
       </div>
@@ -182,7 +182,7 @@
 
 <footer class="footer">
   <div class="container">
-    <p>Sentinel Watch — Mantle 图灵测试黑客松 2026</p>
+    <p>SignalProof — Injective Solo AI Builder Sprint 2026</p>
   </div>
 </footer>
 

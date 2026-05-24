@@ -1,33 +1,33 @@
 /* ============================================================
-   Sentinel Watch — Valorant 反作弊透明层
-   配色：Valorant 暗黑主题
+   SignalProof — AI 交易信号透明层
+   配色：Injective 暗蓝主题
    ============================================================ */
 
 :root {
-  /* 主色调 — Valorant Red */
-  --color-primary: #FF4655;
-  --color-primary-dark: #D93645;
-  --color-primary-glow: rgba(255, 70, 85, 0.3);
+  /* 主色调 — Injective Cyan */
+  --color-primary: #00EAFF;
+  --color-primary-dark: #00B4D8;
+  --color-primary-glow: rgba(0, 234, 255, 0.25);
 
   /* 背景层次 */
-  --color-bg: #0A0E13;
-  --color-bg-elevated: #111820;
-  --color-card: #1A2332;
-  --color-card-hover: #1F2A3C;
+  --color-bg: #070B19;
+  --color-bg-elevated: #0D1326;
+  --color-card: #111B33;
+  --color-card-hover: #162040;
 
   /* 文字 */
-  --color-text: #ECE8E1;
-  --color-text-secondary: #8B9798;
-  --color-text-muted: #5B6778;
+  --color-text: #E8ECF1;
+  --color-text-secondary: #8899AA;
+  --color-text-muted: #556677;
 
   /* 边框 & 分割 */
-  --color-border: #2A3A4A;
-  --color-border-light: #3A4A5A;
+  --color-border: #1E2D4A;
+  --color-border-light: #2A3D5E;
 
   /* 语义色 */
-  --color-success: #2ECC71;
-  --color-warning: #F39C12;
-  --color-danger: #E74C3C;
+  --color-success: #00C9A7;
+  --color-warning: #F0A500;
+  --color-danger: #FF4D6A;
 
   /* 动效 */
   --transition: cubic-bezier(0.25, 0.46, 0.45, 0.94);

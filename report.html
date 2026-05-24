@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>提交举报 — Sentinel Watch | AI × 链上反作弊</title>
-  <meta name="description" content="提交无畏契约可疑行为截图，AI Agent 自动分析并生成疑点报告，哈希上链存证。让每一条证据都可追溯。">
-  <meta property="og:title" content="提交举报 — Sentinel Watch">
-  <meta property="og:description" content="上传截图 → AI 分析 → 链上存证 → 社区投票。反作弊透明化，从你开始。">
+  <title>提交验证 — SignalProof | AI 交易信号透明层</title>
+  <meta name="description" content="提交交易 KOL 的历史信号记录，AI Agent 自动对比链上数据验证准确率，哈希上链存证。让每一个信号都可验证。">
+  <meta property="og:title" content="提交验证 — SignalProof">
+  <meta property="og:description" content="提交信号 → AI 验证 → 链上存证 → 社区投票。信号透明化，从你开始。">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,17 +21,17 @@
 
 <nav class="nav" role="navigation" aria-label="主导航">
   <div class="nav-inner">
-    <a href="/" class="nav-logo" aria-label="Sentinel Watch 首页">
-      <span class="logo-icon" aria-hidden="true">&#9878;</span>
-      Sentinel Watch
+    <a href="/" class="nav-logo" aria-label="SignalProof 首页">
+      <span class="logo-icon" aria-hidden="true">&#9883;</span>
+      SignalProof
     </a>
     <button class="nav-toggle" aria-label="切换菜单" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
     <div class="nav-links" role="menubar">
       <a href="/" role="menuitem">首页</a>
-      <a href="/report" class="active" role="menuitem">提交举报</a>
-      <a href="/case?id=case-001" role="menuitem">案例库</a>
+      <a href="/report" class="active" role="menuitem">提交验证</a>
+      <a href="/case?id=case-001" role="menuitem">信号库</a>
       <a href="#submit-form" class="btn-outline" role="menuitem">立即提交</a>
     </div>
   </div>
@@ -45,9 +45,9 @@
   <div class="container" style="max-width:720px;">
     <div style="text-align:center;margin-bottom:40px;">
       <div class="hero-badge">步骤 1 → 2 → 3</div>
-      <h1 style="font-family:var(--font-heading);font-size:2.2rem;margin:16px 0;">提交可疑行为证据</h1>
+      <h1 style="font-family:var(--font-heading);font-size:2.2rem;margin:16px 0;">提交交易信号验证</h1>
       <p style="color:var(--color-text-secondary);max-width:500px;margin:0 auto;">
-        上传游戏截图、描述可疑行为。AI Agent 将自动分析并生成报告，随后哈希上链存档。
+        提交 KOL 的历史交易信号记录。AI Agent 将自动对比链上数据验证准确率，随后哈希上链存档。
       </p>
     </div>
 
@@ -64,38 +64,34 @@
 
     <div class="card" id="step1">
       <div class="card-header">
-        <h2 class="card-title">&#128221; 举报信息</h2>
+        <h2 class="card-title">&#128221; 信号信息</h2>
         <span class="badge badge-red">Step 1</span>
       </div>
 
       <div class="form-group">
-        <label class="form-label" for="caseTitle">案例标题 *</label>
-        <input type="text" class="form-input" id="caseTitle" placeholder="例如：超凡段位疑似透视 — Ascent A点穿烟连杀" maxlength="100">
-        <p class="form-hint">简明扼要描述可疑行为，建议包含地图和段位信息</p>
+        <label class="form-label" for="caseTitle">信号标题 *</label>
+        <input type="text" class="form-input" id="caseTitle" placeholder="例如：KOL @TraderX 声称 90% BTC 做单胜率 — 近30天信号验证" maxlength="100">
+        <p class="form-hint">简明扼要描述待验证的交易信号，建议包含 KOL 名称和交易品种</p>
       </div>
 
       <div class="form-group">
-        <label class="form-label" for="caseMap">游戏地图</label>
+        <label class="form-label" for="caseMap">交易平台</label>
         <select class="form-select" id="caseMap">
-          <option value="">选择地图（可选）</option>
-          <option value="Ascent 亚海悬城">亚海悬城 (Ascent)</option>
-          <option value="Bind 源工重镇">源工重镇 (Bind)</option>
-          <option value="Haven 隐世修所">隐世修所 (Haven)</option>
-          <option value="Split 霓虹町">霓虹町 (Split)</option>
-          <option value="Icebox 森寒冬港">森寒冬港 (Icebox)</option>
-          <option value="Breeze 微风岛屿">微风岛屿 (Breeze)</option>
-          <option value="Fracture 裂变峡谷">裂变峡谷 (Fracture)</option>
-          <option value="Pearl 深海明珠">深海明珠 (Pearl)</option>
-          <option value="Lotus 莲华古城">莲华古城 (Lotus)</option>
-          <option value="Sunset 日落之城">日落之城 (Sunset)</option>
-          <option value="Abyss 幽邃地窟">幽邃地窟 (Abyss)</option>
-          <option value="Corrode 盐海矿镇">盐海矿镇 (Corrode)</option>
+          <option value="">选择平台（可选）</option>
+          <option value="Binance 币安">币安 (Binance)</option>
+          <option value="OKX">OKX</option>
+          <option value="Bybit">Bybit</option>
+          <option value="Hyperliquid">Hyperliquid</option>
+          <option value="dYdX">dYdX</option>
+          <option value="GMX">GMX</option>
+          <option value="Injective">Injective</option>
+          <option value="Other 其他">其他</option>
         </select>
       </div>
 
       <div class="form-group">
         <label class="form-label" for="caseDescription">详细描述 *</label>
-        <textarea class="form-textarea" id="caseDescription" placeholder="描述可疑行为：时间点、具体操作、疑点…&#10;&#10;例如：03:22 左右在 A 小通道隔着墙预瞄我的位置，随后连续穿烟击杀 3 人。反应时间明显异常，疑似使用透视和锁头辅助。"></textarea>
+        <textarea class="form-textarea" id="caseDescription" placeholder="描述待验证的信号：KOL、时间段、声称胜率、交易品种…&#10;&#10;例如：Telegram KOL @CryptoWhale 声称 BTC 合约胜率 90%，近 30 天共发出 45 条信号。需要验证其实际准确率和盈亏比。建议比对链上交易记录。"></textarea>
         <p class="form-hint">越详细越好——AI 会用这些关键词辅助分析</p>
       </div>
 
@@ -108,19 +104,19 @@
 
     <div class="card" id="step2" style="display:none;">
       <div class="card-header">
-        <h2 class="card-title">&#128247; 上传证据截图</h2>
+        <h2 class="card-title">&#128247; 上传信号截图</h2>
         <span class="badge badge-red">Step 2</span>
       </div>
 
       <div class="upload-zone" id="uploadZone" role="button" tabindex="0" aria-label="点击或拖拽上传截图">
         <div class="upload-icon" aria-hidden="true">&#128206;</div>
-        <p class="upload-text">拖拽截图到此处，或 <span>点击选择文件</span></p>
+        <p class="upload-text">拖拽交易信号截图到此处，或 <span>点击选择文件</span></p>
         <p style="font-size:0.78rem;color:var(--color-text-muted);margin-top:8px;">支持 JPG / PNG / WebP，单张不超过 5MB，最多 5 张</p>
         <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp" multiple hidden>
       </div>
 
       <div class="upload-preview" id="uploadPreview"></div>
-      <p class="form-hint" style="margin-top:12px;">已选择 <strong id="fileCount">0</strong> 张截图</p>
+      <p class="form-hint" style="margin-top:12px;">已选择 <strong id="fileCount">0</strong> 张信号截图</p>
 
       <div style="display:flex;gap:12px;margin-top:20px;">
         <button class="btn btn-outline" id="btnBackTo1" style="flex:1;">← 上一步</button>
@@ -142,7 +138,7 @@
       <div id="analyzingState">
         <div style="text-align:center;padding:32px 0;">
           <div class="loading-spinner" style="width:40px;height:40px;border-width:3px;margin-bottom:16px;"></div>
-          <p style="color:var(--color-text-secondary);">AI Agent 正在分析截图…</p>
+          <p style="color:var(--color-text-secondary);">AI Agent 正在验证信号准确率…</p>
           <p style="font-size:0.82rem;color:var(--color-text-muted);margin-top:4px;">这大约需要 3-5 秒</p>
         </div>
       </div>
@@ -156,7 +152,7 @@
           </div>
           <div class="analysis-body">
             <div class="analysis-confidence">
-              <span style="font-size:0.85rem;color:var(--color-text-secondary);">可疑置信度</span>
+              <span style="font-size:0.85rem;color:var(--color-text-secondary);">信号可信度</span>
               <div class="confidence-meter">
                 <div class="confidence-meter-fill" id="confidenceFill" style="width:0%;background:var(--color-warning);"></div>
               </div>
@@ -197,9 +193,9 @@
     <div class="card" id="successState" style="display:none;text-align:center;padding:48px 24px;">
       <div style="font-size:3rem;margin-bottom:16px;" aria-hidden="true">&#9989;</div>
       <h2 style="font-family:var(--font-heading);font-size:1.4rem;margin-bottom:8px;">提交成功！</h2>
-      <p style="color:var(--color-text-secondary);margin-bottom:8px;">AI 分析报告已上链存证</p>
+      <p style="color:var(--color-text-secondary);margin-bottom:8px;">验证报告已上链存证</p>
       <p style="font-family:var(--font-mono);font-size:0.85rem;color:var(--color-primary);margin-bottom:24px;" id="txHashDisplay">交易哈希：0x...</p>
-      <a href="/case?id=case-001" class="btn btn-primary">查看案例详情 →</a>
+      <a href="/case?id=case-001" class="btn btn-primary">查看信号详情 →</a>
       <a href="/" class="btn btn-outline" style="margin-left:12px;">返回首页</a>
     </div>
 
@@ -211,7 +207,7 @@
 
 <footer class="footer">
   <div class="container">
-    <p>Sentinel Watch — Mantle 图灵测试黑客松 2026</p>
+    <p>SignalProof — Injective Solo AI Builder Sprint 2026</p>
   </div>
 </footer>
 
