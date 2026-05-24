@@ -314,7 +314,7 @@
     const params = new URLSearchParams(window.location.search);
     currentCaseId = params.get('id') || 'case-001';
 
-    const apiUrl = `/api/cases/${currentCaseId}`;
+    const apiUrl = `/api/cases?id=${currentCaseId}`;
     try {
       const c = await api(apiUrl);
       renderCaseDetail(c);

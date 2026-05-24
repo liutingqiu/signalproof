@@ -221,14 +221,24 @@ const server = http.createServer((req, res) => {
 
   // ── API 路由 ──────────────────────────────────────────
 
-  // GET /api/cases — 获取所有案例
+  // GET /api/cases — 获取所有案例（支持 ?id=xxx 查单个）
   if (pathname === '/api/cases' && method === 'GET') {
     const cases = getDemoCases();
+    const id = url.searchParams.get('id');
+    if (id) {
+      const c = cases.find(x => x.id === id);
+      if (c) {
+        res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+        return res.end(JSON.stringify(c));
+      }
+      res.writeHead(404, { 'Content-Type': 'application/json' });
+      return res.end(JSON.stringify({ error: '案例未找到' }));
+    }
     res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
     return res.end(JSON.stringify(cases));
   }
 
-  // GET /api/cases/:id — 获取单个案例
+  // GET /api/cases/:id — 获取单个案例（兼容旧格式）
   if (pathname.startsWith('/api/cases/') && method === 'GET') {
     const id = pathname.split('/api/cases/')[1];
     const cases = getDemoCases();
