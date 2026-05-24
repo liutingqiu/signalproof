@@ -1,0 +1,65 @@
+[
+  {
+    "id": "case-001",
+    "title": "天梯超凡段位疑似透视举报",
+    "reporter": "玩家@SharpEye",
+    "map": "亚海悬城 (Ascent)",
+    "timestamp": "2026-06-01T14:30:00Z",
+    "status": "voting",
+    "screenshots": 3,
+    "aiConfidence": 72,
+    "aiSummary": "AI 检测到 3 处可疑行为：隔墙预瞄频率异常（2次/分钟）、反应时间低于人类阈值（平均 48ms）、搜点路径与常规差异显著。建议社区复审。",
+    "analysisEvents": [
+      { "time": "03:22", "type": "suspicious", "desc": "A 小通道隔墙预瞄敌方位置，准星持续跟踪墙体后目标移动轨迹，持续 2.4 秒" },
+      { "time": "05:47", "type": "suspicious", "desc": "B 点烟幕内连续击杀 3 人，无视野情况下反应时间仅 52ms，远超人类极限（~200ms）" },
+      { "time": "07:15", "type": "normal", "desc": "中路正常搜点，路径符合常规战术习惯" },
+      { "time": "09:33", "type": "suspicious", "desc": "防守方回防路径异常，绕开已知有人区域，疑似提前获取敌方分布信息" },
+      { "time": "11:50", "type": "normal", "desc": "残局 1v2 正常处理，无异常行为标记" }
+    ],
+    "voteCheat": 64,
+    "voteClean": 22,
+    "voteUncertain": 14,
+    "txHash": "0x7f3a8b2c1d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a"
+  },
+  {
+    "id": "case-002",
+    "title": "钻石局怀疑 aimbot 锁头举报",
+    "reporter": "玩家@NightOwl",
+    "map": "源工重镇 (Bind)",
+    "timestamp": "2026-06-02T09:15:00Z",
+    "status": "resolved",
+    "screenshots": 2,
+    "aiConfidence": 15,
+    "aiSummary": "AI 检测未发现明显异常。准星移动轨迹与人类操作特征吻合，爆头率虽高（38%）但击杀节奏、搜点习惯与高分段玩家一致。建议标记为正常。",
+    "analysisEvents": [
+      { "time": "02:10", "type": "normal", "desc": "A 点防守定位正常，准星摆动幅度附合人类操作特征" },
+      { "time": "06:30", "type": "normal", "desc": "B 点瞬爆头击杀，但击杀帧前后准星微调轨迹自然，非机械锁定" },
+      { "time": "08:55", "type": "normal", "desc": "残局处理冷静，搜点节奏与经验老手一致" }
+    ],
+    "voteCheat": 8,
+    "voteClean": 85,
+    "voteUncertain": 7,
+    "txHash": "0x2a1e3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f0a"
+  },
+  {
+    "id": "case-003",
+    "title": "VCT 次级联赛可疑回放分析",
+    "reporter": "社区分析师@TacticalEye",
+    "map": "隐世修所 (Haven)",
+    "timestamp": "2026-06-03T18:45:00Z",
+    "status": "voting",
+    "screenshots": 4,
+    "aiConfidence": 58,
+    "aiSummary": "AI 在分析 4 张截图后发现 1 处高度可疑 + 2 处疑似行为。关键帧显示选手在无信息情况下做出精准判断。建议社区深入讨论。",
+    "analysisEvents": [
+      { "time": "01:45", "type": "normal", "desc": "开局常规布防走位正常" },
+      { "time": "04:22", "type": "suspicious", "desc": "C 点单摸路线刻意避开敌方所有常规站位，巧合概率低于 5%" },
+      { "time": "07:08", "type": "suspicious", "desc": "C 点长道连杀 2 人，准星转移速度超常，但未达到明显锁头阈值" },
+      { "time": "10:12", "type": "normal", "desc": "下半场手枪局正常处理" }
+    ],
+    "voteCheat": 41,
+    "voteClean": 35,
+    "voteUncertain": 24,
+    "txHash": "0x9d4f5e6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e"
+  }
+]

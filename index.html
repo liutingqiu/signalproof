@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sentinel Watch — AI × 链上反作弊透明层 | 无畏契约社区</title>
+  <meta name="description" content="Sentinel Watch 利用 AI Agent 分析游戏截图、链上存证不可篡改、社区投票透明裁决。让每一次反作弊判定都可追溯、可验证。无畏契约玩家的诚信基础设施。">
+  <meta property="og:title" content="Sentinel Watch — AI × 链上反作弊透明层">
+  <meta property="og:description" content="AI Agent 证据整理 + 链上哈希存证 + 社区公开投票。反作弊不再黑箱。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sentinel-watch.vercel.app/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════
+     导航栏
+     ═══════════════════════════════════════════════════ -->
+
+<nav class="nav" role="navigation" aria-label="主导航">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="Sentinel Watch 首页">
+      <span class="logo-icon" aria-hidden="true">&#9878;</span>
+      Sentinel Watch
+    </a>
+    <button class="nav-toggle" aria-label="切换菜单" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" role="menubar">
+      <a href="/" class="active" role="menuitem">首页</a>
+      <a href="/report" role="menuitem">提交举报</a>
+      <a href="/case?id=case-001" role="menuitem">案例库</a>
+      <a href="/report" class="btn-outline" role="menuitem">立即参与</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════
+     Hero 区域
+     ═══════════════════════════════════════════════════ -->
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">Mantle 图灵测试黑客松 2026 · Agentic Economy Track</div>
+    <h1>
+      反作弊<br>
+      从<span class="accent">黑箱</span>到<span class="accent">透明</span>
+    </h1>
+    <p class="hero-subtitle">
+      AI Agent 智能分析游戏证据，链上哈希存证不可篡改，社区公开投票透明裁决。
+      让每一次判定都可追溯、可验证。
+    </p>
+    <div class="hero-actions">
+      <a href="/report" class="btn btn-primary btn-lg">提交举报 →</a>
+      <a href="/case?id=case-001" class="btn btn-outline btn-lg">查看案例库</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     工作原理
+     ═══════════════════════════════════════════════════ -->
+
+<section class="section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px;">
+      <h2 style="font-family:var(--font-heading);font-size:2rem;margin-bottom:12px;">三阶透明裁决</h2>
+      <p style="color:var(--color-text-secondary);max-width:560px;margin:0 auto;">AI 不做法官——AI 做证据整理者。最终裁决权属于社区。</p>
+    </div>
+
+    <div class="grid-3">
+      <!-- Step 1 -->
+      <div class="card feature-card reveal">
+        <div class="feature-icon" aria-hidden="true">&#128269;</div>
+        <h3>1. 提交证据</h3>
+        <p>玩家提交游戏截图与描述。AI Agent 自动分析可疑行为模式，生成结构化疑点报告。</p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="card feature-card reveal">
+        <div class="feature-icon" aria-hidden="true">&#9935;</div>
+        <h3>2. 链上存证</h3>
+        <p>AI 分析报告哈希写入 Mantle 链上。不可篡改的时间戳证明确保证据链完整。</p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="card feature-card reveal">
+        <div class="feature-icon" aria-hidden="true">&#9878;</div>
+        <h3>3. 社区投票</h3>
+        <p>社区成员查看 AI 报告与原始证据后投票：作弊 / 清白 / 不确定。公开透明，人人参与。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     最新案例
+     ═══════════════════════════════════════════════════ -->
+
+<section class="section-sm" style="background:var(--color-bg-elevated);">
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;">
+      <h2 style="font-family:var(--font-heading);font-size:1.6rem;">最新案例</h2>
+      <a href="/report" class="btn btn-outline btn-sm">提交新案例</a>
+    </div>
+    <div class="case-list" id="caseList">
+      <!-- JS 动态渲染 -->
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     为什么选我们
+     ═══════════════════════════════════════════════════ -->
+
+<section class="section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px;">
+      <h2 style="font-family:var(--font-heading);font-size:2rem;margin-bottom:12px;">为什么 Sentinel Watch？</h2>
+      <p style="color:var(--color-text-secondary);max-width:560px;margin:0 auto;">传统反作弊系统由厂商单方面决策，玩家无法验证、无法申诉、无法信任。</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card reveal">
+        <h3 style="font-family:var(--font-heading);color:var(--color-primary);margin-bottom:8px;">&#10004; 透明可查</h3>
+        <p style="color:var(--color-text-secondary);font-size:0.92rem;">所有 AI 分析报告与投票记录哈希上链，任何人都可以在 Mantle Explorer 上查询验证。</p>
+      </div>
+      <div class="card reveal">
+        <h3 style="font-family:var(--font-heading);color:var(--color-success);margin-bottom:8px;">&#10004; 社区驱动</h3>
+        <p style="color:var(--color-text-secondary);font-size:0.92rem;">判定权属于玩家社区——不是拳头、不是腾讯、不是某个人的主观判断。</p>
+      </div>
+      <div class="card reveal">
+        <h3 style="font-family:var(--font-heading);color:var(--color-warning);margin-bottom:8px;">&#10004; AI 辅助</h3>
+        <p style="color:var(--color-text-secondary);font-size:0.92rem;">RealClaw AI Agent 自动标注疑点、计算置信度——但 AI 只给建议，不做最终裁定。</p>
+      </div>
+      <div class="card reveal">
+        <h3 style="font-family:var(--font-heading);color:#9B59B6;margin-bottom:8px;">&#10004; 跨游戏扩展</h3>
+        <p style="color:var(--color-text-secondary);font-size:0.92rem;">架构不限于无畏契约——任何 FPS 游戏都可以接入 Sentinel Watch 反作弊透明层。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     页脚
+     ═══════════════════════════════════════════════════ -->
+
+<footer class="footer">
+  <div class="container">
+    <p>Sentinel Watch — Mantle 图灵测试黑客松 2026</p>
+    <p style="margin-top:8px;">Built with &#10084; for the Valorant Community</p>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>案例详情 — Sentinel Watch | AI × 链上反作弊</title>
+  <meta name="description" content="查看 AI 分析报告、社区投票结果、链上存证记录。参与投票，让每一次裁决都透明。">
+  <meta property="og:title" content="案例详情 — Sentinel Watch">
+  <meta property="og:description" content="AI 分析报告 + 社区投票 + 链上存证。反作弊透明化。">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════
+     导航栏
+     ═══════════════════════════════════════════════════ -->
+
+<nav class="nav" role="navigation" aria-label="主导航">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="Sentinel Watch 首页">
+      <span class="logo-icon" aria-hidden="true">&#9878;</span>
+      Sentinel Watch
+    </a>
+    <button class="nav-toggle" aria-label="切换菜单" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" role="menubar">
+      <a href="/" role="menuitem">首页</a>
+      <a href="/report" role="menuitem">提交举报</a>
+      <a href="/case?id=case-001" class="active" role="menuitem">案例库</a>
+      <a href="/report" class="btn-outline" role="menuitem">提交新案例</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════
+     案例详情
+     ═══════════════════════════════════════════════════ -->
+
+<section class="section-sm">
+  <div class="container" style="max-width:900px;">
+
+    <!-- 返回链接 -->
+    <a href="/" style="display:inline-flex;align-items:center;gap:6px;font-size:0.88rem;margin-bottom:24px;color:var(--color-text-secondary);">
+      ← 返回案例列表
+    </a>
+
+    <!-- 案例头部 -->
+    <div class="card" style="margin-bottom:24px;" id="caseHeader">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+        <div>
+          <h1 id="caseTitleDisplay" style="font-family:var(--font-heading);font-size:1.5rem;">加载中…</h1>
+          <div style="display:flex;gap:12px;margin-top:8px;flex-wrap:wrap;">
+            <span class="badge badge-gray" id="caseReporter">举报者：—</span>
+            <span class="badge badge-gray" id="caseMap">地图：—</span>
+            <span class="badge badge-gray" id="caseTime">时间：—</span>
+          </div>
+        </div>
+        <div>
+          <span class="badge badge-yellow" id="caseStatus" style="font-size:0.9rem;">投票中</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 两栏布局 -->
+    <div style="display:grid;grid-template-columns:1fr 380px;gap:24px;" id="caseContent">
+
+      <!-- 左栏：AI 分析 -->
+      <div>
+        <!-- AI 分析面板 -->
+        <div class="analysis-panel reveal">
+          <div class="analysis-header">
+            <span class="ai-icon" aria-hidden="true">AI</span>
+            AI 分析报告
+            <span style="margin-left:auto;font-size:0.78rem;color:var(--color-text-muted);">由 RealClaw 驱动</span>
+          </div>
+          <div class="analysis-body">
+            <div class="analysis-confidence">
+              <span style="font-size:0.85rem;color:var(--color-text-secondary);">可疑置信度</span>
+              <div class="confidence-meter">
+                <div class="confidence-meter-fill" id="confFill" style="width:0%;"></div>
+              </div>
+              <span style="font-weight:700;font-family:var(--font-mono);" id="confValue">—</span>
+            </div>
+
+            <p id="aiSummaryText" style="font-size:0.9rem;color:var(--color-text-secondary);margin-bottom:16px;">加载中…</p>
+
+            <div class="analysis-timeline" id="analysisEvents">
+              <!-- JS 动态填充 -->
+            </div>
+          </div>
+        </div>
+
+        <!-- 证据截图 -->
+        <div class="card" style="margin-top:24px;">
+          <h3 style="font-family:var(--font-heading);margin-bottom:16px;">&#128247; 证据截图</h3>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;" id="screenshotGrid">
+            <div style="aspect-ratio:16/9;background:var(--color-bg-elevated);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;color:var(--color-text-muted);font-size:0.82rem;">
+              截图预览区<br>（Demo）
+            </div>
+          </div>
+          <p class="form-hint" style="margin-top:12px;">
+            出于隐私保护，公开展示的截图为模糊处理版本。
+            <a href="#" style="color:var(--color-primary);">查看原始文件</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- 右栏：投票 -->
+      <div>
+        <div class="vote-section reveal" style="position:sticky;top:80px;">
+          <div class="vote-header">&#9878; 社区投票</div>
+
+          <div id="voteButtons">
+            <div class="vote-buttons">
+              <button class="vote-btn" data-choice="1" aria-label="投票：作弊">
+                &#128128; 作弊
+              </button>
+              <button class="vote-btn" data-choice="2" aria-label="投票：清白">
+                &#9989; 清白
+              </button>
+              <button class="vote-btn" data-choice="3" aria-label="投票：不确定">
+                &#8265; 不确定
+              </button>
+            </div>
+            <button class="btn btn-primary btn-sm" id="btnCastVote" style="width:100%;" disabled>确认投票</button>
+          </div>
+
+          <p id="voteMessage" style="font-size:0.82rem;color:var(--color-text-muted);margin-top:8px;text-align:center;display:none;"></p>
+
+          <!-- 投票结果 -->
+          <div style="margin-top:20px;">
+            <div class="vote-result">
+              <div class="vote-bar-wrap">
+                <div class="vote-bar-label"><span>作弊</span><span id="countCheat">0</span></div>
+                <div class="vote-bar"><div class="vote-bar-fill cheat" id="barCheat" style="width:0%;"></div></div>
+              </div>
+            </div>
+            <div class="vote-result" style="margin-top:12px;">
+              <div class="vote-bar-wrap">
+                <div class="vote-bar-label"><span>清白</span><span id="countClean">0</span></div>
+                <div class="vote-bar"><div class="vote-bar-fill clean" id="barClean" style="width:0%;"></div></div>
+              </div>
+            </div>
+            <div class="vote-result" style="margin-top:12px;">
+              <div class="vote-bar-wrap">
+                <div class="vote-bar-label"><span>不确定</span><span id="countUncertain">0</span></div>
+                <div class="vote-bar"><div class="vote-bar-fill uncertain" id="barUncertain" style="width:0%;"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 链上信息 -->
+          <div style="margin-top:24px;padding-top:16px;border-top:1px solid var(--color-border);">
+            <p style="font-size:0.78rem;color:var(--color-text-muted);margin-bottom:8px;">&#9935; 链上存证</p>
+            <p style="font-family:var(--font-mono);font-size:0.78rem;color:var(--color-primary);word-break:break-all;" id="txHash">—</p>
+            <a href="#" id="explorerLink" target="_blank" rel="noopener" style="font-size:0.78rem;display:none;">
+              在 Mantle Explorer 查看 →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 案例列表切换 -->
+    <div style="margin-top:48px;">
+      <h3 style="font-family:var(--font-heading);margin-bottom:16px;">其他案例</h3>
+      <div class="case-list" id="otherCases">
+        <!-- JS 动态渲染 -->
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Toast -->
+<div class="toast" id="toast" aria-live="polite"></div>
+
+<footer class="footer">
+  <div class="container">
+    <p>Sentinel Watch — Mantle 图灵测试黑客松 2026</p>
+  </div>
+</footer>
+
+<script src="/js/main.js"></script>
+</body>
+</html>
